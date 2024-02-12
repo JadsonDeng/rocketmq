@@ -75,8 +75,10 @@ public class NamesrvController {
 
     public boolean initialize() {
 
+        // 加载配置
         this.kvConfigManager.load();
 
+        // 创建netty server
         this.remotingServer = new NettyRemotingServer(this.nettyServerConfig, this.brokerHousekeepingService);
 
         this.remotingExecutor =
